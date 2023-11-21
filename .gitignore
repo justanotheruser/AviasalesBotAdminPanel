@@ -1,0 +1,11 @@
+__pycache__/
+.idea
+.eggs/
+build/
+.env
+*.log
+temp/
+dist/
+.mypy_cache
+src/air_bot.egg-info
+tests/ui/test_bot_config.env

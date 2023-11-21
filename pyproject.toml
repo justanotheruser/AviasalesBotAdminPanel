@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "aviasales-bot-admin"
+version = "0.1.0"
+description = ""
+authors = ["Слепцов Денис Сергеевич <d.sleptsov@mashtab.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
