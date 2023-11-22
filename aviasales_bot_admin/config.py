@@ -10,7 +10,7 @@ class BotConfig(BaseSettings):
     db_name: str
 
     class Config:
-        env_prefix = "AIR_BOT_ADMIN_"
+        env_prefix = "AIR_BOT_"
 
     def get_mysql_uri(self) -> str:
         uri_template = "mysql+asyncmy://{user}:{password}@{host}:{port}/{db_name}"
@@ -24,4 +24,4 @@ class BotConfig(BaseSettings):
 
 
 load_dotenv()
-config = BotConfig()
+config = BotConfig()  # type: ignore[call-arg]
