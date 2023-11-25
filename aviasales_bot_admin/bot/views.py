@@ -19,12 +19,15 @@ def create_views(app: FastAPI, bot_name: str, database):
         context = {
             'request': request,
             'users': users,
-            'bot_name': 'bot_name placeholder',
         }
         return templates.TemplateResponse('users.html', context=context)
 
     @app.get("/directions/")
-    async def flight_directions_list(db=database):
+    async def flight_directions_list(request: Request, db=database):
         flight_directions_repo = FlightDirectionsRepo(db)
         flight_directions = await flight_directions_repo.get_list()
-        return flight_directions
+        context = {
+            'request': request,
+            'flight_directions': flight_directions,
+        }
+        return templates.TemplateResponse('flight_directions.html', context=context)

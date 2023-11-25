@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users of {{ bot_name }}</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>start_code</th>
+        <th>start_name</th>
+        <th>end_code</th>
+        <th>end_name</th>
+        <th>С пересадками</th>
+        <th>Отправление</th>
+        <th>Возвращение</th>
+        <th>Цена</th>
+        <th>Последнее обновление</th>
+    </tr>
+    {% for direction in flight_directions %}
+    <tr>
+        <td>{{ direction.id }}</td>
+        <td>{{ direction.start_code }}</td>
+        <td>{{ direction.start_name }}</td>
+        <td>{{ direction.end_code }}</td>
+        <td>{{ direction.end_name }}</td>
+        <td>{{ direction.with_transfer }}</td>
+        <td>{{ direction.departure_at}}</td>
+        <td>{{ direction.return_at }}</td>
+        <td>{{ direction.price }}</td>
+        <td>{{ direction.last_update }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
