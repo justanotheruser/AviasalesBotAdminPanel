@@ -1,4 +1,6 @@
-from dotenv import load_dotenv
+import pathlib
+
+import yaml
 from pydantic import BaseSettings, SecretStr
 
 
@@ -8,9 +10,6 @@ class BotConfig(BaseSettings):
     db_user: str
     db_pass: SecretStr
     db_name: str
-
-    class Config:
-        env_prefix = "AIR_BOT_"
 
     def get_mysql_uri(self) -> str:
         uri_template = "mysql+asyncmy://{user}:{password}@{host}:{port}/{db_name}"
@@ -23,5 +22,18 @@ class BotConfig(BaseSettings):
         )
 
 
-load_dotenv()
-config = BotConfig()  # type: ignore[call-arg]
+class Config(BaseSettings):
+    bots: dict[str, BotConfig]
+
+
+def load_config(config_path: pathlib.Path) -> Config:
+    with open(config_path, 'r') as file:
+        data = yaml.load(file, Loader=yaml.SafeLoader)
+    return Config(**data)
+
+
+def default_config_path() -> pathlib.Path:
+    return pathlib.Path(__file__).parent.parent.resolve() / 'config.yaml'
+
+
+config = load_config(default_config_path())

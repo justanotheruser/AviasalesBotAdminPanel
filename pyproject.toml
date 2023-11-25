@@ -12,6 +12,7 @@ sqlmodel = "^0.0.12"
 load-dotenv = "^0.1.0"
 uvicorn = "^0.24.0.post1"
 asyncmy = "^0.2.8"
+pyyaml = "^6.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,6 +21,13 @@ isort = "^5.12.0"
 flake8 = "^6.1.0"
 mypy = "^1.7.0"
 pre-commit = "^3.5.0"
+types-pyyaml = "^6.0.12.12"
+
+[tool.black]
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
 
 [build-system]
 requires = ["poetry-core"]

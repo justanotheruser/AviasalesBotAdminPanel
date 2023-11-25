@@ -2,7 +2,7 @@ __pycache__/
 .idea
 .eggs/
 build/
-.env
+config.yaml
 *.log
 temp/
 dist/
