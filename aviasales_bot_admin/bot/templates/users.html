@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Users of {{ bot_name }}</title>
+    <title>Пользователи бота {{ bot_name }}</title>
+    {% include 'js_scripts.html' %}
 </head>
 <body>
-<table>
+<table class="border">
     <tr>
         <th>Telegram ID</th>
         <th>Tracked directions</th>
