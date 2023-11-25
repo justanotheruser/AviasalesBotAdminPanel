@@ -7,7 +7,7 @@ from aviasales_bot_admin.config import config
 def make_app():
     app = FastAPI()
     for bot_name, bot_config in config.bots.items():
-        bot_info_api = BotInfoAPI(bot_config)
+        bot_info_api = BotInfoAPI(bot_name, bot_config)
         app.mount(f'/{bot_name}', bot_info_api.app)
     return app
 

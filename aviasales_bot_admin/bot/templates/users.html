@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users of {{ bot_name }}</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Telegram ID</th>
+        <th>Tracked directions</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.user_id }}</td>
+        <td>Хуй его знает</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
