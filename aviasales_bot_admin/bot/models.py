@@ -20,3 +20,11 @@ class FlightDirection(SQLModel, table=True):
     return_at: str | None
     price: float | None
     last_update: datetime.datetime
+
+
+class UserDirection(SQLModel, table=True):
+    __tablename__ = "users_directions"
+    user_id: int = Field(nullable=False, primary_key=True, foreign_key="users.user_id")
+    direction_id: int = Field(
+        nullable=False, primary_key=True, foreign_key="flight_directions.id"
+    )

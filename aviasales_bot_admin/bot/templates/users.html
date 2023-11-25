@@ -9,12 +9,12 @@
 <table class="border">
     <tr>
         <th>Telegram ID</th>
-        <th>Tracked directions</th>
+        <th>Отслеживаемых направлений</th>
     </tr>
     {% for user in users %}
     <tr>
         <td>{{ user.user_id }}</td>
-        <td>Хуй его знает</td>
+        <td>{{ user.n_directions }}</td>
     </tr>
     {% endfor %}
 </table>

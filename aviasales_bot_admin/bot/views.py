@@ -15,7 +15,7 @@ def create_views(app: FastAPI, bot_name: str, database):
     @app.get("/users/", response_class=HTMLResponse)
     async def users_list(request: Request, db=database):
         users_repo = UsersRepo(db)
-        users = await users_repo.get_list()
+        users = await users_repo.get_full_info_list()
         context = {
             'request': request,
             'users': users,
