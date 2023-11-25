@@ -1,10 +1,10 @@
-from fastapi import APIRouter, Depends
+from fastapi import Depends
 
 from aviasales_bot_admin.bot.database import get_db, init_db
 from aviasales_bot_admin.bot.flight_directions_repo import FlightDirectionsRepo
 from aviasales_bot_admin.bot.users_repo import UsersRepo
 
-router = APIRouter()
+from aviasales_bot_admin.bot.app import router
 
 
 @router.on_event("startup")
