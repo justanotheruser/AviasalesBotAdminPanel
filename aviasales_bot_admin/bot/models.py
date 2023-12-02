@@ -20,6 +20,7 @@ class FlightDirection(SQLModel, table=True):
     return_at: str | None
     price: float | None
     last_update: datetime.datetime
+    last_update_try: datetime.datetime
 
 
 class UserDirection(SQLModel, table=True):

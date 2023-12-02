@@ -18,6 +18,7 @@
         <th>Возвращение</th>
         <th>Цена</th>
         <th>Последнее обновление</th>
+        <th>Последняя попытка обновления</th>
     </tr>
     {% for direction in flight_directions %}
     <tr>
@@ -31,6 +32,7 @@
         <td>{{ direction.return_at }}</td>
         <td>{{ direction.price }}</td>
         <td>{{ direction.last_update }}</td>
+        <td>{{ direction.last_update_try }}</td>
     </tr>
     {% endfor %}
 </table>
