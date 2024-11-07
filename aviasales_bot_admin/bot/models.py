@@ -1,24 +1,25 @@
 import datetime
+from typing import Optional
 
 from sqlmodel import Field, SQLModel
 
 
 class User(SQLModel, table=True):
     __tablename__ = "users"
-    user_id: int | None = Field(default=None, primary_key=True)
+    user_id: Optional[int] = Field(default=None, primary_key=True)
 
 
 class FlightDirection(SQLModel, table=True):
     __tablename__ = "flight_directions"
-    id: int | None = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     start_code: str
     start_name: str
     end_code: str
     end_name: str
     with_transfer: bool
     departure_at: str
-    return_at: str | None
-    price: float | None
+    return_at: Optional[str]
+    price: Optional[float]
     last_update: datetime.datetime
     last_update_try: datetime.datetime
 

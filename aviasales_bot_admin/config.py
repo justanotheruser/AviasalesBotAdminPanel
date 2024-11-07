@@ -1,4 +1,5 @@
 import pathlib
+from typing import Dict
 
 import yaml
 from pydantic import BaseSettings, SecretStr
@@ -23,7 +24,7 @@ class BotConfig(BaseSettings):
 
 
 class Config(BaseSettings):
-    bots: dict[str, BotConfig]
+    bots: Dict[str, BotConfig]
 
 
 def load_config(config_path: pathlib.Path) -> Config:
