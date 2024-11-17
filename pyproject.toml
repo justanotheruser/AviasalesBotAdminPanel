@@ -6,7 +6,7 @@ authors = ["Слепцов Денис Сергеевич <d.sleptsov@mashtab.org
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 fastapi = "^0.104.1"
 sqlmodel = "^0.0.12"
 load-dotenv = "^0.1.0"
