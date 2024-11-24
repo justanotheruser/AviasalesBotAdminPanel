@@ -66,4 +66,4 @@ fi
 cd "$admin_panel_root_dir" || exit
 source ~/.profile
 echo "$host"
-uvicorn aviasales_bot_admin.main:app --host "$host" --reload
+poetry run uvicorn aviasales_bot_admin.main:app --host "$host" --reload
